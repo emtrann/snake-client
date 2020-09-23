@@ -14,6 +14,22 @@ conn.on('connect', () => {
   conn.write('Name: MT3');
 });
 
+
+
+
+const setupInput = function() {
+  const stdin = process.stdin;
+  stdin.setRawMode(true);
+  stdin.setEncoding('utf8');
+  stdin.resume();
+  const handleUserInput = stdin.on('data', (key) => {
+    if (key === '\u0003') {
+      process.exit();
+    }
+  });
+
+  return stdin;
+}
 // conn.on('connect', () => {
 //   setTimeout(() => {
 //   conn.write('Move: up');
@@ -22,3 +38,4 @@ conn.on('connect', () => {
 
 console.log('Connecting ...');
 connect();
+setupInput();
