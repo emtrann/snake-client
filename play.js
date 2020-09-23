@@ -2,15 +2,10 @@ const { connect } = require('./client.js');
 const { setupInput } = require('./input.js');
 
 // conn.on('connect', () => {
-//   conn.write('Name: MT3');
-// });
-
-// conn.on('connect', () => {
 //   setTimeout(() => {
 //   conn.write('Move: up');
 //   }, 3000);
 // });
 
 console.log('Connecting ...');
-connect();
-setupInput();
+setupInput(connect());

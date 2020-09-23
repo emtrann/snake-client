@@ -17,6 +17,9 @@ const connect = function() {
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
+  conn.on('connect', () => {
+    conn.write('Name: MT3');
+  });
   return conn;
 }
 
