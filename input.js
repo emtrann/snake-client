@@ -19,6 +19,8 @@ const setupInput = function(conn) {
       connection.write('Move: down');
     } else if (key === 'a') {
       connection.write('Move: left');
+    } else if (key === 'l') {
+      connection.write('Say: woohoo');
     }
   });
 
